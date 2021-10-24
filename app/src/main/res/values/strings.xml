@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">TeaApp</string>
+        <string-array name="tea_array">
+            <item>White</item>
+            <item>Green</item>
+            <item>Black</item>
+            <item>Oolong</item>
+            <item>Chamomile</item>
+            <item>Hibiscus</item>
+            <item>Jasmine</item>
+            <item>Pu-erh</item>
+            <item>Peppermint</item>
+            <item>Rooibos</item>
+            <item>Yellow</item>
+        </string-array>
+    </resources>
