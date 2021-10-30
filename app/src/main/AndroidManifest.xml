@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.teaapp"
-    >
-    <uses-permission android:name="android.permission.INTERNET"/>
+    package="com.example.teaapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,10 +13,13 @@
         android:theme="@style/Theme.TeaApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".TeaBrewInfo"
+            android:exported="true" />
+        <activity
             android:name=".TeaSelection"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
