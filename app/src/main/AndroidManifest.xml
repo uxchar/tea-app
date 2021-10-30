@@ -13,6 +13,9 @@
         android:theme="@style/Theme.TeaApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".BrewTimer"
+            android:exported="true" />
+        <activity
             android:name=".TeaBrewInfo"
             android:exported="true" />
         <activity

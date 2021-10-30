@@ -18,13 +18,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         val view = binding.root
         setContentView(view)
         teaDropDown()
-        val button: Button = findViewById(R.id.selectButton)
-        button.setOnClickListener {
-            val intent = Intent(this, TeaBrewInfo::class.java)
-            startActivity(intent)
-        }
-
     }
+
+
 
 
     private fun teaDropDown() {
@@ -46,11 +42,26 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-            val selectedItem = parent?.getItemAtPosition(position).toString()
-            val text = "You Selected ${selectedItem} Tea, Please Press Select to Continue"
+        val button: Button = findViewById(R.id.selectButton)
+        val selectedTea = parent?.getItemAtPosition(position).toString()
+        if(selectedTea == "Choose Tea Type"){
+
+            } else{
+            var text = "You selected $selectedTea tea, please press Select to continue"
             val duration = Toast.LENGTH_SHORT
             val toast = Toast.makeText(applicationContext, text, duration)
             toast.show()
+            button.setOnClickListener {
+                if (selectedTea == "Choose Tea Type") {
+                    text = "Please choose a tea type to continue"
+                    toast.show()
+                } else {
+                    val intent = Intent(this, TeaBrewInfo::class.java)
+                    intent.putExtra("tea_selection", selectedTea)
+                    startActivity(intent)
+                }
+            }
+    }
     }
 
 

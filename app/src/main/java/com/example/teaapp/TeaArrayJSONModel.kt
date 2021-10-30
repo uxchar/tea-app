@@ -19,6 +19,14 @@ data class TeaArrayJSONModel(
     var description: String?,
 
     @field:Json(name = "keywords")
-    var keywords: String?
+    var keywords: String?,
 
+    @field:Json(name = "origin")
+    var origin: String?,
+
+    @field:Json(name = "brew_time")
+    var brew_time: Int?,
+
+    @field:Json(name = "temparature")
+    var temperature: Int?,
 )

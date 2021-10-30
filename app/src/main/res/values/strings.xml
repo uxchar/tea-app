@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">TeaApp</string>
     <string-array name="tea_array">
+        <item>Choose Tea Type</item>
         <item>White</item>
         <item>Green</item>
         <item>Black</item>

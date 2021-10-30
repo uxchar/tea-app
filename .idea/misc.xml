@@ -4,8 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/uxcha/AndroidStudioProjects/TeaApp2/app/src/main/res/drawable/line_divider.xml" value="0.1609375" />
+        <entry key="..\:/Users/uxcha/AndroidStudioProjects/TeaApp2/app/src/main/res/layout/activity_brew_timer.xml" value="0.1" />
         <entry key="..\:/Users/uxcha/AndroidStudioProjects/TeaApp2/app/src/main/res/layout/activity_main.xml" value="0.268" />
-        <entry key="..\:/Users/uxcha/AndroidStudioProjects/TeaApp2/app/src/main/res/layout/activity_tea_brew_info.xml" value="0.44000000000000006" />
+        <entry key="..\:/Users/uxcha/AndroidStudioProjects/TeaApp2/app/src/main/res/layout/activity_tea_brew_info.xml" value="0.36" />
         <entry key="..\:/Users/uxcha/AndroidStudioProjects/TeaApp2/app/src/main/res/layout/activity_tea_selection.xml" value="0.1" />
         <entry key="..\:/Users/uxcha/AndroidStudioProjects/TeaApp2/app/src/main/res/layout/green_tea_fragment.xml" value="0.12777777777777777" />
       </map>
