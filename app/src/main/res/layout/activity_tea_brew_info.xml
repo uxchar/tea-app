@@ -95,14 +95,19 @@
 
         <TextView
             android:id="@+id/teaBrewTemp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="21dp"
+            android:layout_height="24dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="512dp"
+            android:layout_marginEnd="7dp"
             android:text="TextView"
             android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/celsiusSymbol"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/toolbar" />
+            app:layout_constraintTop_toTopOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/teaBrewTime"
@@ -173,7 +178,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="16dp" />
+            app:layout_constraintGuide_begin="-10dp" />
 
         <androidx.constraintlayout.widget.Barrier
             android:id="@+id/barrier2"
@@ -181,6 +186,70 @@
             android:layout_height="wrap_content"
             app:barrierDirection="left"
             tools:layout_editor_absoluteX="411dp" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="482dp"
+            android:layout_marginBottom="11dp"
+            android:text="min"
+            app:layout_constraintBottom_toTopOf="@+id/teaBrewTemp"
+            app:layout_constraintStart_toEndOf="@+id/teaBrewTime"
+            app:layout_constraintTop_toTopOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/teaImageView"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="213dp"
+            android:layout_marginTop="38dp"
+            app:layout_constraintStart_toEndOf="@+id/teaName"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/celsiusSymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="456dp"
+            android:text="c"
+            app:layout_constraintStart_toEndOf="@+id/teaBrewTemp"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <TextView
+            android:id="@+id/fahrenheitConvert"
+            android:layout_width="29dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="456dp"
+            android:layout_marginEnd="241dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/celsiusSymbol"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <TextView
+            android:id="@+id/fahrenheitSymbol"
+            android:layout_width="7dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="457dp"
+            android:text="f"
+            app:layout_constraintStart_toEndOf="@+id/fahrenheitConvert"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <Button
+            android:id="@+id/startBrewBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="548dp"
+            android:text="Begin Brewing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

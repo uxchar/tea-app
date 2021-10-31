@@ -27,6 +27,6 @@ data class TeaArrayJSONModel(
     @field:Json(name = "brew_time")
     var brew_time: Int?,
 
-    @field:Json(name = "temparature")
+    @field:Json(name = "temperature")
     var temperature: Int?,
 )
