@@ -1,76 +1,98 @@
+
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+
 }
 
 android {
     compileSdk 31
 
+
     buildFeatures {
+        compose true
         viewBinding true
     }
+
+
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.0.1'
+        kotlinCompilerVersion '1.5.21'
+
+    }
+
     defaultConfig {
         applicationId "com.example.teaapp"
         minSdk 26
         targetSdk 31
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
+    kotlinOptions {
+        freeCompilerArgs += [
+                "-P",
+                "plugin:androidx.compose.compiler.plugins.kotlin:suppressKotlinVersionCompatibilityCheck=true"
+        ]
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-}
+
 
 dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
     implementation "com.squareup.okhttp3:okhttp:4.9.0"
     implementation 'com.google.code.gson:gson:2.8.6'
-    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
-    testImplementation 'junit:junit:4.+'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+    implementation 'com.google.ar.sceneform:filament-android:1.17.1'
+    implementation 'androidx.compose.material:material:1.0.4'
+    implementation 'com.google.android.gms:play-services-maps:18.0.0'
+    implementation 'androidx.compose.ui:ui-tooling-preview:1.0.4'
+    implementation "androidx.activity:activity-compose:1.4.0"
+    implementation "androidx.compose.ui:ui:1.0.4"
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     //life cycle
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0'
 
     //runtime liveDate
-    implementation "androidx.compose.runtime:runtime-livedata:1.0"
+    implementation "androidx.compose.runtime:runtime-livedata:1.0.4"
 
     //viewModel
-    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha02"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0"
 
     //konfetti
     implementation 'nl.dionsegijn:konfetti:1.2.6'
 
     //view binding
-    implementation "androidx.compose.ui:ui-viewbinding:1.0"
+    implementation "androidx.compose.ui:ui-viewbinding:1.0.4"
+
+    implementation "androidx.activity:activity-compose:1.4.0"
 
     testImplementation 'junit:junit:4.13.2'
 
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:1.0"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:1.0.4" }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
 }

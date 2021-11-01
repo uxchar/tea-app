@@ -3,10 +3,10 @@ package com.example.teaapp
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.teaapp.databinding.ActivityMainBinding
-
 
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
@@ -17,7 +17,16 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        val img = findViewById<ImageView>(R.id.teaLadyLogo)
+        val title = findViewById<TextView>(R.id.teaTitle)
+        val question = findViewById<TextView>(R.id.teaBrewText)
+        val animation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+        //starting the animation
+        img.startAnimation(animation)
+        title.startAnimation(animation)
+        question.startAnimation(animation)
         teaDropDown()
+
     }
 
 

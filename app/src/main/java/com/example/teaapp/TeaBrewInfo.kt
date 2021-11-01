@@ -37,9 +37,9 @@ class TeaBrewInfo : AppCompatActivity() {
 
     private fun brewButton(){
         val timer_button = findViewById<Button>(R.id.startBrewBtn)
-        var selectedTea = intent.getStringExtra("tea_selection")
+        val selectedTea = intent.getStringExtra("tea_selection")
         timer_button.setOnClickListener {
-                val intent = Intent(this, BrewTimer::class.java)
+                val intent = Intent(this, TeaTimer::class.java)
                 intent.putExtra("tea_selection", selectedTea)
                 startActivity(intent)
             }
@@ -62,21 +62,21 @@ class TeaBrewInfo : AppCompatActivity() {
             val response = service.listTea()
 
             withContext(Dispatchers.Main) {
-                var userTeaChoice = intent.getStringExtra("tea_selection")
-                var tea_name = findViewById<TextView>(R.id.teaName)
-                var tea_description = findViewById<TextView>(R.id.teaDescription)
-                var tea_keywords = findViewById<TextView>(R.id.teaKeywords)
-                var tea_origin = findViewById<TextView>(R.id.teaOrigin)
-                var tea_brew_time = findViewById<TextView>(R.id.teaBrewTime)
-                var tea_brew_temp = findViewById<TextView>(R.id.teaBrewTemp)
+                val userTeaChoice = intent.getStringExtra("tea_selection")
+                val tea_name = findViewById<TextView>(R.id.teaName)
+                val tea_description = findViewById<TextView>(R.id.teaDescription)
+                val tea_keywords = findViewById<TextView>(R.id.teaKeywords)
+                val tea_origin = findViewById<TextView>(R.id.teaOrigin)
+                val tea_brew_time = findViewById<TextView>(R.id.teaBrewTime)
+                val tea_brew_temp = findViewById<TextView>(R.id.teaBrewTemp)
 
                 if (response.isSuccessful) {
                     val data = response.body()
-                    var teaImage = findViewById<ImageView>(R.id.teaImageView)
-                    var fConvert = findViewById<TextView>(R.id.fahrenheitConvert)
+                    val teaImage = findViewById<ImageView>(R.id.teaImageView)
+                    val fConvert = findViewById<TextView>(R.id.fahrenheitConvert)
                     if (data != null) {
                         if (userTeaChoice == "Green") {
-                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage);
+                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage)
 
                             tea_name.setText(data[0].name)
                             tea_description.setText(data[0].description)
@@ -88,7 +88,7 @@ class TeaBrewInfo : AppCompatActivity() {
 
 
                         } else if (userTeaChoice == "Black") {
-                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage);
+                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage)
 
                             tea_name.setText(data[1].name)
                             tea_description.setText(data[1].description)
@@ -99,7 +99,7 @@ class TeaBrewInfo : AppCompatActivity() {
                             fConvert.setText(((data[1].temperature)!!.times(9).div(5).plus(32)).toString())
 
                         } else if (userTeaChoice == "Chamomile") {
-                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage);
+                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/camo.png").into(teaImage)
 
                             tea_name.setText(data[2].name)
                             tea_description.setText(data[2].description)
@@ -110,7 +110,7 @@ class TeaBrewInfo : AppCompatActivity() {
                             fConvert.setText(((data[2].temperature)!!.times(9).div(5).plus(32)).toString())
 
                         } else if (userTeaChoice == "Hibiscus") {
-                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage);
+                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage)
 
                             tea_name.setText(data[3].name)
                             tea_description.setText(data[3].description)
@@ -121,7 +121,7 @@ class TeaBrewInfo : AppCompatActivity() {
                             fConvert.setText(((data[3].temperature)!!.times(9).div(5).plus(32)).toString())
 
                         } else if (userTeaChoice == "Jasmine") {
-                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage);
+                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage)
 
                             tea_name.setText(data[4].name)
                             tea_description.setText(data[4].description)
@@ -132,7 +132,7 @@ class TeaBrewInfo : AppCompatActivity() {
                             fConvert.setText(((data[4].temperature)!!.times(9).div(5).plus(32)).toString())
 
                         } else if (userTeaChoice == "Mate") {
-                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage);
+                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage)
 
                             tea_name.setText(data[5].name)
                             tea_description.setText(data[5].description)
@@ -144,7 +144,7 @@ class TeaBrewInfo : AppCompatActivity() {
 
 
                         } else if (userTeaChoice == "Oolong") {
-                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage);
+                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage)
 
                             tea_name.setText(data[6].name)
                             tea_description.setText(data[6].description)
@@ -155,7 +155,7 @@ class TeaBrewInfo : AppCompatActivity() {
                             fConvert.setText(((data[6].temperature)!!.times(9).div(5).plus(32)).toString())
 
                         } else if (userTeaChoice == "Pu-erh") {
-                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage);
+                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage)
 
                             tea_name.setText(data[7].name)
                             tea_description.setText(data[7].description)
@@ -166,7 +166,7 @@ class TeaBrewInfo : AppCompatActivity() {
                             fConvert.setText(((data[7].temperature)!!.times(9).div(5).plus(32)).toString())
 
                         } else if (userTeaChoice == "Peppermint") {
-                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage);
+                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage)
 
                             tea_name.setText(data[8].name)
                             tea_description.setText(data[8].description)
@@ -177,7 +177,7 @@ class TeaBrewInfo : AppCompatActivity() {
                             fConvert.setText(((data[8].temperature)!!.times(9).div(5).plus(32)).toString())
 
                         } else if (userTeaChoice == "Rooibos") {
-                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage);
+                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage)
 
                             tea_name.setText(data[9].name)
                             tea_description.setText(data[9].description)
@@ -188,7 +188,7 @@ class TeaBrewInfo : AppCompatActivity() {
                             fConvert.setText(((data[9].temperature)!!.times(9).div(5).plus(32)).toString())
 
                         } else if (userTeaChoice == "White") {
-                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage);
+                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage)
 
                             tea_name.setText(data[10].name)
                             tea_description.setText(data[10].description)
@@ -199,7 +199,7 @@ class TeaBrewInfo : AppCompatActivity() {
                             fConvert.setText(((data[10].temperature)!!.times(9).div(5).plus(32)).toString())
 
                         } else if (userTeaChoice == "Yellow") {
-                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage);
+                            Picasso.get().load("https://tea-api-vic-lo.herokuapp.com/uploads/${userTeaChoice.lowercase()}.png").into(teaImage)
 
                             tea_name.setText(data[11].name)
                             tea_description.setText(data[11].description)
