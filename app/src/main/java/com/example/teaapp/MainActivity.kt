@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
 
 
-
+//Drop down menu for user tea selection
     private fun teaDropDown() {
         val spinner: Spinner = findViewById(R.id.static_spinner)
         spinner.onItemSelectedListener = this
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         }
     }
-
+//Code for select button to continue to next screen when pushed
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         val button: Button = findViewById(R.id.selectButton)
         val selectedTea = parent?.getItemAtPosition(position).toString()

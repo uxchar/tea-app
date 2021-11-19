@@ -51,12 +51,13 @@ class TeaTimer : AppCompatActivity() {
             }
         }
 
-
+//Timer button view when started
         private fun startTimer() {
             countDownTimer.start()
             isStarted = true
             start_stop_btn?.text = "Stop"
         }
+//Timer button view when stopped
 
         private fun stopTimer() {
             countDownTimer.cancel()
@@ -64,7 +65,7 @@ class TeaTimer : AppCompatActivity() {
             start_stop_btn?.text = "Start"
             timer?.text = "00:00"
         }
-
+//Timer reset
         override fun onDestroy() {
             super.onDestroy()
             countDownTimer.cancel()

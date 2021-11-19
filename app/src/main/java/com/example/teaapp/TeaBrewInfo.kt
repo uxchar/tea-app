@@ -29,12 +29,13 @@ class TeaBrewInfo : AppCompatActivity() {
 
         actionBar.setDisplayHomeAsUpEnabled(true)
     }
-
+// Back press arrow button in ActionBar
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
     }
 
+    //Code for brewing button to start timer
     private fun brewButton(){
         val timer_button = findViewById<Button>(R.id.startBrewBtn)
         val selectedTea = intent.getStringExtra("tea_selection")
@@ -61,6 +62,7 @@ class TeaBrewInfo : AppCompatActivity() {
 
             val response = service.listTea()
 
+            //API data pulled and shown based on user selection from previous screen
             withContext(Dispatchers.Main) {
                 val userTeaChoice = intent.getStringExtra("tea_selection")
                 val tea_name = findViewById<TextView>(R.id.teaName)
